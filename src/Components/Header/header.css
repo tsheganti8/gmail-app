@@ -1,0 +1,8 @@
+.headerContainer {
+    background-color: #282c34;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+}

@@ -1,0 +1,12 @@
+.icon {
+    padding-left: 0.5rem;
+    padding-top: 0.25rem;
+    cursor: pointer;
+}
+
+.iconHeader {
+    height: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid;
+}

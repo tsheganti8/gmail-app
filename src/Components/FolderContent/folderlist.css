@@ -1,0 +1,14 @@
+.folderContainer {
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+}
+
+.folderItem {
+    padding-left: 1rem;
+    display: flex;
+    height: 2.5rem;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
