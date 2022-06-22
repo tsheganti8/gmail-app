@@ -2,9 +2,23 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Prerequisites
+Install Node for Mac/Windows (https://nodejs.org/en/download/)
+Install npm using, `npm install`
+Install npx using, `npm i npx`
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npx json-server --watch db.json --port 3001`
+
+Runs the app in the development mode.\
+Open [http://localhost:3001/](http://localhost:3001/) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
 
 ### `npm start`
 
@@ -13,6 +27,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+## Replace the Mockjson from originalMockFolder after all the data has been replaced.
 
 ### `npm test`
 
