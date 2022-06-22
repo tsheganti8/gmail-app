@@ -1,23 +1,24 @@
+import axios from 'axios';
 import React from 'react';
 import './messagecontent.css'
 
-export const MessageContent = () => {
-    const [messageList, setMessageList] = React.useState<any[]>([]);
-    const [messageID, setMessageID] = React.useState<boolean>(false);
+export const MessageContent = (props: { messageID: string }) => {
 
-    const [messageContent, setMessageContent] = React.useState<any>({})
+    const [messageContent, setMessageContent] = React.useState<any>({});
 
     React.useEffect(() => {
-        setMessageContent({
-            "from": "Jane Doe <jane.doe@example.com>",
-            "id": "123abc",
-            "subject": "Re: Postgres Meetup Thursday",
-            "to": "Coding Test User <foo.bar@example.com>",
-            "date": "Mon, 21 Jun 2021 09:03:30 -0700",
-            "reply-to": "Jane Doe <jane.doe@example.com>",
-            "body": "Thursday's meetup will be held at 6 pm.\nPizza, beer, and soft drinks will be provided.\nI'll be giving a talk on the Postgres disk buffering system, and my colleague Alonzo Church will talk about a lambda calculus based extension language we're building."
-        })
-    }, [])
+        if (props.messageID) {
+            axios.get(`http://localhost:3001/messages/${props.messageID}`)
+                .then(function (response) {
+                    // handle success
+                    setMessageContent(response.data)
+                })
+                .catch(function (error) {
+                    // handle error                    
+                    setMessageContent({})
+                });
+        }
+    }, [props.messageID])
 
     return (<div className='messageContentContainer'>
         <div className='header'>
